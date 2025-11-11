@@ -1,0 +1,72 @@
+plugins {
+    id 'java'
+    id 'com.google.protobuf' version '0.9.4'
+    id 'application'
+}
+
+group = 'com.example.grpc'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.grpc:grpc-netty-shaded:1.76.0'
+    implementation 'io.grpc:grpc-protobuf:1.76.0'
+    implementation 'io.grpc:grpc-stub:1.76.0'
+    compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.25.2'
+    }
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.76.0'
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += ["build/generated/source/proto/main/java",
+                        "build/generated/source/proto/main/grpc"]
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+application {
+    mainClass = 'com.example.grpc.server'
+}
+
+tasks.register('server', JavaExec) {
+    group = 'application'
+    description = 'Run gRPC server'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.example.grpc.server'
+}
+
+tasks.register('client', JavaExec) {
+    group = 'application'
+    description = 'Run gRPC client'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.example.grpc.client'
+}
+
