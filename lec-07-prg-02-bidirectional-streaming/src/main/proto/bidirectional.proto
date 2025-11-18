@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package bidirectional;
+
+option java_multiple_files = true;
+option java_package = "bidirectional";
+option java_outer_classname = "BidirectionalProto";
+
+service Bidirectional {
+  rpc GetServerResponse (stream Message) returns (stream Message);
+}
+
+message Message {
+  string message = 1;
+}
