@@ -37,7 +37,7 @@ lec-07-prg-02-bidirectional-streaming/
 │     │            ├── server.java
 │     │            └── client.java
 │     └── proto/
-│          └── bidirectional.proto          // 원격 호출 규격 정의 (interface + data 구조)
+│          └── bidirectional.proto       // 원격 호출 규격 정의 (interface + data 구조)
 
 ```
 > 서버 실행
