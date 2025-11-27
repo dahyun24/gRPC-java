@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package clientstreaming;
+
+option java_multiple_files = true;
+option java_package = "clientstreaming";
+option java_outer_classname = "ClientStreamingProto";
+
+service ClientStreaming {
+  rpc GetServerResponse (stream Message) returns (Number);
+}
+
+message Message {
+  string message = 1;
+}
+
+message Number {
+  int32 value = 1;
+}
+
