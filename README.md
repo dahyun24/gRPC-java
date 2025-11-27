@@ -46,3 +46,25 @@ lec-07-prg-02-bidirectional-streaming/
 
 > 클라이언트 실행
 <img width="796" height="318" alt="스크린샷 2025-11-19 오전 12 09 08" src="https://github.com/user-attachments/assets/23173c3e-67d8-4bde-bc86-31aaf3b082f6" />
+
+---
+
+### 03. clientstreaming
+> 클라이언트가 Message를 여러 개 연속으로 서버에 스트림 형식으로 보내고, 전송이 끝나면 서버가 최종 결과를 단 한 번만 응답하는 방식
+```
+lec-07-prg-03-clientstreaming/
+├── build.gradle
+├── src/main
+│     └── java/com/
+│     │     └── example/grpc/
+│     │            ├── server.java
+│     │            └── client.java
+│     └── proto/
+│          └── clientstreaming.proto       // 원격 호출 규격 정의 (interface + data 구조)
+
+```
+> 서버 실행
+<img width="486" height="153" alt="스크린샷 2025-11-27 오전 9 55 32" src="https://github.com/user-attachments/assets/0220b8ce-4676-438d-8478-19ad566a4cf0" />
+
+> 클라이언트 실행
+<img width="486" height="246" alt="스크린샷 2025-11-27 오전 9 55 06" src="https://github.com/user-attachments/assets/992095cd-3a03-4561-af77-235908e86d55" />
