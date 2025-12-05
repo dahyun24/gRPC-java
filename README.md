@@ -45,7 +45,7 @@ lec-07-prg-02-bidirectional-streaming/
 
 
 > 클라이언트 실행
-<img width="796" height="318" alt="스크린샷 2025-11-19 오전 12 09 08" src="https://github.com/user-attachments/assets/23173c3e-67d8-4bde-bc86-31aaf3b082f6" />
+<img width="483" height="299" alt="image" src="https://github.com/user-attachments/assets/d7848a34-4d18-4860-bf0f-afe97ce6c9af" />
 
 ---
 
