@@ -68,3 +68,27 @@ lec-07-prg-03-clientstreaming/
 
 > 클라이언트 실행
 <img width="486" height="246" alt="스크린샷 2025-11-27 오전 9 55 06" src="https://github.com/user-attachments/assets/992095cd-3a03-4561-af77-235908e86d55" />
+
+---
+
+### 04. serverstreaming
+> 클라이언트가 요청 1번만 보내고, 서버는 여러 개의 응답을 순차적으로 스트림 형태로 보내는 방식
+```
+lec-07-prg-04-serverstreaming/
+├── build.gradle
+├── src/main
+│     └── java/com/
+│     │     └── example/grpc/
+│     │            ├── server.java
+│     │            └── client.java
+│     └── proto/
+│          └── serverstreaming.proto       // 원격 호출 규격 정의 (interface + data 구조)
+
+```
+> 서버 실행
+<img width="485" height="148" alt="스크린샷 2025-12-04 오후 8 48 46" src="https://github.com/user-attachments/assets/d761a2d3-87ae-4894-8635-31ccb411df76" />
+
+
+> 클라이언트 실행
+<img width="488" height="221" alt="스크린샷 2025-12-04 오후 8 49 05" src="https://github.com/user-attachments/assets/7f53da28-9c28-42b5-a3f3-1f542d6bec65" />
+
